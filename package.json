@@ -1,5 +1,5 @@
 {
-  "name": "ghstats",
+  "name": "ghstats-cli",
   "version": "1.0.0",
   "description": "Automate the unusual stuffs on GitHub",
   "main": "index.js",

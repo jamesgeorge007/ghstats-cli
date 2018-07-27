@@ -1,0 +1,25 @@
+{
+  "name": "ghstats",
+  "version": "1.0.0",
+  "description": "Automate the unusual stuffs on GitHub",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "GitHub Api"
+  ],
+  "author": "James George",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "chalk-animation": "^1.6.0",
+    "cli-progress": "^2.0.0",
+    "commander": "^2.16.0",
+    "isomorphic-unfetch": "^2.1.0",
+    "progress": "^2.0.0"
+  }
+}

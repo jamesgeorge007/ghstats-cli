@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/ghstats-cli.svg)](https://badge.fury.io/js/ghstats-cli)
+
 # ghstats
 
 > A CLI utility to automate unusual tasks of GitHub.

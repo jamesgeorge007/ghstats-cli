@@ -7,6 +7,7 @@ const program = require('commander');
 const ProgressBar = require('progress'); 
 const chalk = require('chalk');
 const chalkAnimation = require('chalk-animation');
+const figlet = require('figlet');
 
 let progressBarAnimation = () => {
 	let bar = new ProgressBar(':bar', { total: 50 });
@@ -20,6 +21,11 @@ let progressBarAnimation = () => {
 }
 
 let	popular_repositories = (args) => { 
+	figlet('GHstats cli', (err, data) => {
+		if(err){
+			console.log(err);
+		}
+	});
 	console.log(args.user);
 	fetch(`https://api.github.com/users/${args.user}/repos?per_page=100`)
 	.then( response =>  response.json() )

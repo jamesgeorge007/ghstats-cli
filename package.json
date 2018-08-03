@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Automate the unusual stuffs on GitHub",
   "main": "index.js",
-  "bin": "./index.js",
+  "bin": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

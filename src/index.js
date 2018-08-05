@@ -30,20 +30,20 @@ let	popular_repositories = (args) => {
   setTimeout(() => {
 
   	clearInterval(timer);
-	console.log(args.user);
+	// console.log(args.user);
 	fetch(`https://api.github.com/users/${args.user}/repos?per_page=100`)
 	.then( response =>  response.json() )
 	.then( repositories => {
 		try{
-			console.log(chalk.blue('\n\n<-- Popular Repositories -->'));
 			let largest_star_count = repositories[0].stargazers_count;
 			console.log(`Star count for the very first repository:  ${largest_star_count}`);
  	 		for(let repo of repositories){
  				if(repo.stargazers_count > largest_star_count){
  					largest_star_count = repo.stargazers_count;
  				}
- 			} 
- 			console.log(`Largest star count is ${largest_star_count}`);
+ 			}
+ 			console.log(chalk.red.bgBlue.bold('\n\n<-- Popular Repositories -->')); 
+ 			// console.log(`Largest star count is ${largest_star_count}`);
  			let popular_repositories = [];
  			for(let repo of repositories){
  				if(repo.stargazers_count == largest_star_count){

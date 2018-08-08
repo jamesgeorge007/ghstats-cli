@@ -12,6 +12,29 @@ const clear = require('clear');
 const elegantSpinner = require('elegant-spinner');
 const logUpdate = require('log-update');
 
+let basic_info = () => {
+  clear()
+  figlet('GHStats-cli', (err, data) => {
+    	if (err) {
+      	console.log('Something went wrong...');
+      	console.dir(err);
+      	return;
+    	}
+    	console.log(chalk.redBright(data))
+    	console.log(chalk.green('Automate unusual stuffs on GitHub'))
+	});
+  let frame = elegantSpinner();
+  let timer = setInterval(function () {
+    logUpdate(frame());
+}, 300);
+  setTimeout(() =< {
+  	clearInterval(timer);
+  	fetch(`https://api.github.com/users/${args.user}`)
+  	.then()
+  	.catch(err => console.log(err))
+  }, 1000)
+}
+
 let	popular_repositories = (args) => { 
 	clear()
   figlet('GHStats-cli', (err, data) => {
@@ -84,6 +107,13 @@ let star_count = (args) => {
 program
   .version('1.0.0', '-v, --version')
   .description('Automate the unusual stuffs on GitHub');
+
+program
+  .command('basic_info')
+  .option('-u --user <username>', 'Username')
+  .description('Shows all the basic information regarding a user\'s GitHub profile.')
+  .action(basic_info);
+
 
 program
   .command('popular_repos')

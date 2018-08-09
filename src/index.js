@@ -12,7 +12,7 @@ const clear = require('clear');
 const elegantSpinner = require('elegant-spinner');
 const logUpdate = require('log-update');
 
-let basic_info = () => {
+let basic_info = (args) => {
   clear()
   figlet('GHStats-cli', (err, data) => {
     	if (err) {
@@ -27,10 +27,18 @@ let basic_info = () => {
   let timer = setInterval(function () {
     logUpdate(frame());
 }, 300);
-  setTimeout(() =< {
+  setTimeout(() => {
   	clearInterval(timer);
   	fetch(`https://api.github.com/users/${args.user}`)
-  	.then()
+  	.then(response => response.json())
+  	.then(info => {
+  		try{
+  			console.log(chalk.green.bgRed.bold('\n<-- Basic Info -->'));
+  			console.log(`\n\nName: ${info.name}\nFollowers: ${info.followers}\nFollowing: ${info.following}\nRepositories: ${info.public_repos}\nGists: ${info.public_gists}`)
+  		} catch(err){
+  			console.log('Invalid username!');
+  		}
+  	})
   	.catch(err => console.log(err))
   }, 1000)
 }

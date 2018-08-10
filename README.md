@@ -1,6 +1,6 @@
-[![npm version](https://badge.fury.io/js/ghstats-cli.svg)](https://badge.fury.io/js/ghstats-cli)
+[![npm version](https://badge.fury.io/js/ghstats-cli.svg)](https://badge.fury.io/js/ghstats-cli) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/) 
 
-# ghstats-cli
+<h1 align="center"> GHstats-cli </h1>
 
 > A CLI utility to automate unusual tasks of GitHub.
 

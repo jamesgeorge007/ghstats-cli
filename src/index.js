@@ -24,7 +24,7 @@ let basic_info = (args) => {
     	console.log(chalk.green('Automate unusual stuffs on GitHub'))
 	});
   let frame = elegantSpinner();
-  let timer = setInterval(function () {
+  let timer = setInterval( () => {
     logUpdate(frame());
 }, 300);
   setTimeout(() => {
@@ -55,7 +55,7 @@ let	popular_repositories = (args) => {
     	console.log(chalk.green('Automate unusual stuffs on GitHub'))
 	});
   let frame = elegantSpinner();
-  let timer = setInterval(function () {
+  let timer = setInterval( () => {
     logUpdate(frame());
 }, 300);
   setTimeout(() => {
@@ -67,7 +67,7 @@ let	popular_repositories = (args) => {
 	.then( repositories => {
 		try{
 			let largest_star_count = repositories[0].stargazers_count;
-			console.log(`Star count for the very first repository:  ${largest_star_count}`);
+			// console.log(`Star count for the very first repository:  ${largest_star_count}`);
  	 		for(let repo of repositories){
  				if(repo.stargazers_count > largest_star_count){
  					largest_star_count = repo.stargazers_count;
@@ -93,11 +93,28 @@ let	popular_repositories = (args) => {
 }
 
 let star_count = (args) => {
-	fetch(`https://api.github.com/users/${args.user}/repos?per_page=100`)
-	.then(response => response.json())
-	.then(repositories => {
+		clear()
+  figlet('GHStats-cli', (err, data) => {
+    	if (err) {
+      	console.log('Something went wrong...');
+      	console.dir(err);
+      	return;
+    	}
+    	console.log(chalk.redBright(data))
+    	console.log(chalk.green('Automate unusual stuffs on GitHub'))
+	});
+  let frame = elegantSpinner();
+  let timer = setInterval( () => {
+    logUpdate(frame());
+}, 300);
+	setTimeout( () => {
+
+		clearInterval(timer);
+		 fetch(`https://api.github.com/users/${args.user}/repos?per_page=100`)
+		.then(response => response.json())
+		.then(repositories => {
 		try{
-			console.log('\n\n<--Star Count-->');
+			console.log(chalk.green.bgRed.bold('\n\n<--Star Count-->'));
 			let stars = 0;
 			for(let repo of repositories){
 				if(!repo.fork){
@@ -109,7 +126,9 @@ let star_count = (args) => {
 			console.log('Invalid username!');
 		}
 	})
-	.catch(err => console.log(err));
+	.catch(err => console.log(err));	
+
+	}) 
 }	
 
 program

@@ -4,6 +4,10 @@
 
 > A CLI utility to automate unusual tasks of GitHub.
 
+## *Installation*
+
+> npm install ghstats-cli
+
 ## *Features*
 
 - [x] Basic profile information.

@@ -8,6 +8,8 @@
 
 `npm install ghstats-cli`
 
+![Demo](https://github.com/jamesgeorge007/ghstats-cli/blob/master/assets/screencast.gif)
+
 ## *Features*
 
 - [x] Basic profile information.

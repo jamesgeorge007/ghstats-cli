@@ -6,13 +6,13 @@
 
 ## *Features*
 
-- [ ] Basic profile information.
+- [x] Basic profile information.
 - [x] List the poular repositories by star count.
 - [x] Get to know the star count that the user has for his source repositories.
 
 ## *Usage*
 
-```
+```js
 	ghstats-cli info -u <username>
 
 	ghstats-cli popular_repos -u <username>

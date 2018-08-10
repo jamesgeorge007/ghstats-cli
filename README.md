@@ -4,6 +4,8 @@
 
 > A CLI utility to automate unusual tasks of GitHub.
 
+All those packages that you may across among those cli tools or smiliar sought of libraries will be performing just the data fetching part from the API that makes no sense. I made an attempt to fetch couple of unusual stuffs unseen in those pre-available tools as mentioned above such as counting up the stars the user has received for his repositories excluding the forks. It involves implementations in the programmatic way rather than normal data fetching stuff say, fetching the star count for source repositories require couple of array manipulations. 
+
 ## *Installation*
 
 `npm install ghstats-cli`

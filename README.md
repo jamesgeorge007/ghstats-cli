@@ -6,7 +6,7 @@
 
 ## *Installation*
 
-> npm install ghstats-cli
+`npm install ghstats-cli`
 
 ## *Features*
 
@@ -23,7 +23,3 @@
 
 	ghstats-cli stars -u <username>
 ```
-
-## Status
-
-> Under Development.

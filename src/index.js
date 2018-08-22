@@ -26,7 +26,7 @@ let basic_info = (args) => {
   let frame = elegantSpinner();
   let timer = setInterval( () => {
     logUpdate(frame());
-}, 300);
+  }, 300);
   setTimeout(() => {
   	clearInterval(timer);
   	fetch(`https://api.github.com/users/${args.user}`)
@@ -43,7 +43,7 @@ let basic_info = (args) => {
   }, 1000)
 }
 
-let	popular_repositories = (args) => { 
+let popular_repositories = (args) => { 
 	clear()
   figlet('GHStats-cli', (err, data) => {
     	if (err) {

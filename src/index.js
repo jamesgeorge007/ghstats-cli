@@ -3,8 +3,7 @@
 'use strict'
 
 const fetch = require('isomorphic-unfetch');
-const program = require('commander');
-const ProgressBar = require('progress'); 
+const program = require('commander'); 
 const chalk = require('chalk');
 const chalkAnimation = require('chalk-animation');
 const figlet = require('figlet');
@@ -43,7 +42,7 @@ let basic_info = (args) => {
   }, 1000)
 }
 
-let popular_repositories = (args) => { 
+let popular_repositories = (args) => {
 	clear()
   figlet('GHStats-cli', (err, data) => {
     	if (err) {
@@ -73,7 +72,7 @@ let popular_repositories = (args) => {
  					largest_star_count = repo.stargazers_count;
  				}
  			}
- 			console.log(chalk.red.bgBlue.bold('\n\n<-- Popular Repositories -->')); 
+ 			console.log(chalk.red.bgBlue.bold('\n\n<-- Popular Repositories -->'));
  			// console.log(`Largest star count is ${largest_star_count}`);
  			let popular_repositories = [];
  			for(let repo of repositories){
@@ -121,15 +120,15 @@ let star_count = (args) => {
 					stars += repo.stargazers_count;
 				}
 			}
-		console.log(`\n\nNumber of stars received by the user for his personal repositories excluding forks: ${stars}`);	
+		console.log(`\n\nNumber of stars received by the user for his personal repositories excluding forks: ${stars}`);
 		} catch(err){
 			console.log('Invalid username!');
 		}
 	})
-	.catch(err => console.log(err));	
+	.catch(err => console.log(err));
 
-	}) 
-}	
+	})
+}
 
 program
   .version('1.0.0', '-v, --version')
@@ -154,4 +153,4 @@ program
   .description('Stars received for the repositories that user owns.')
   .action(star_count);
 
-program.parse(process.argv);  
+program.parse(process.argv);

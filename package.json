@@ -4,10 +4,10 @@
   "description": "Automate the unusual stuffs on GitHub",
   "main": "index.js",
   "bin": "src/index.js",
-"repository": {
-  "type": "git",
-  "url": "https://github.com/jamesgeorge007/ghstats-cli"
-},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesgeorge007/ghstats-cli"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -17,7 +17,7 @@ const  popularRepos  = require('./lib/popular_repos');
 const  versionInfo = require('./lib/version_info');
 
 program
-  command('version')
+  .command('version')
   .description('Shows basic information such as version-info and development environment details')
   .action(versionInfo);
 

@@ -12,7 +12,7 @@ All those packages that you may come across among those cli tools or simliar sou
 
 ## *Installation*
 
-`npm install ghstats-cli`
+`npm install -g ghstats-cli`
 
 ![Demo](https://github.com/jamesgeorge007/ghstats-cli/blob/master/assets/screencast.gif)
 

@@ -10,8 +10,8 @@ const showBanner = () => {
       	console.dir(err);
       	return;
     	}
-    	console.log(chalk.redBright(data))
-    	console.log(chalk.green('Automate unusual stuffs on GitHub'))
+    	console.log(chalk.yellow(data))
+    	console.log(chalk.greenBright(' Automate unusual stuffs on GitHub'))
 	});
 }
 

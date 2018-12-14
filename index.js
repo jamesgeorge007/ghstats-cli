@@ -14,10 +14,12 @@ const logUpdate = require('log-update');
 const  basicInfo = require('./lib/basic_info');
 const  starCount  = require('./lib/star_count');
 const  popularRepos  = require('./lib/popular_repos');
+const  versionInfo = require('./lib/version_info');
 
 program
-  .version('1.0.0', '-v, --version')
-  .description('Automate the unusual stuffs on GitHub');
+  command('version')
+  .description('Shows basic information such as version-info and development environment details')
+  .action(versionInfo);
 
 program
   .command('basic_info')

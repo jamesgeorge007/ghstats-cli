@@ -15,7 +15,7 @@ All those packages that you may come across among those cli tools or simliar sou
 
 `npm install -g ghstats-cli`
 
-![Demo](https://github.com/jamesgeorge007/ghstats-cli/blob/master/assets/screencast.gif)
+![capture](https://github.com/jamesgeorge007/ghstats-cli/blob/master/assets/capture.JPEG)
 
 ## *Features*
 

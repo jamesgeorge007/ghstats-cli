@@ -25,5 +25,5 @@ All those packages that you may come across among those cli tools or simliar sou
 
 ## License
 
-Licensed under `GNU General Public License V3`	
+Licensed under `GNU General Public License V3.0`	
 

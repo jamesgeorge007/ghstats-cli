@@ -27,7 +27,6 @@ program
   .description('Shows all the basic information regarding a user\'s GitHub profile.')
   .action(basicInfo);
 
-
 program
   .command('popular_repos')
   .option('-u, --user <username>', 'Username')
@@ -39,6 +38,14 @@ program
   .option('-u, --user <username>', 'Username')
   .description('Stars received for the repositories that user owns.')
   .action(starCount);
+
+program
+  .arguments('<command>')
+  .action((cmd) => {
+    program.outputHelp()
+    console.log(`  ` + chalk.red(`\n  Unknown command ${chalk.yellow(cmd)}.`))
+    console.log()
+})
 
 program.parse(process.argv);
 

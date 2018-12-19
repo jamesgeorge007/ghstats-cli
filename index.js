@@ -45,7 +45,7 @@ program
     program.outputHelp()
     console.log(`  ` + chalk.red(`\n  Unknown command ${chalk.yellow(cmd)}.`))
     console.log()
-})
+});
 
 program.parse(process.argv);
 

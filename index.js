@@ -22,20 +22,17 @@ program
   .action(versionInfo);
 
 program
-  .command('basic_info')
-  .option('-u --user <username>', 'Username')
+  .command('basic_info <username>')
   .description('Shows all the basic information regarding a user\'s GitHub profile.')
   .action(basicInfo);
 
 program
-  .command('popular_repos')
-  .option('-u, --user <username>', 'Username')
+  .command('popular_repos <username>')
   .description('Fetch the popular repostories by star count.')
   .action(popularRepos);
 
 program
-  .command('stars')
-  .option('-u, --user <username>', 'Username')
+  .command('stars <username>')
   .description('Stars received for the repositories that user owns.')
   .action(starCount);
 

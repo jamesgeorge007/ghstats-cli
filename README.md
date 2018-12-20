@@ -3,9 +3,9 @@
 [![npm version](https://badge.fury.io/js/ghstats-cli.svg)](https://badge.fury.io/js/ghstats-cli) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/jamesgeorge007/ghstats-cli/blob/master/LICENSE)
 
-<h1 align="center"> GHstats-cli </h1>
+<h1 align="center"> GHstats-CLI </h1>
 
-> A CLI utility to automate unusual tasks of GitHub.
+> A CLI utility to show a particular user's GitHub activity.
 
 ## Basic Info
 

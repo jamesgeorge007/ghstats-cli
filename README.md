@@ -19,9 +19,9 @@ All those packages that you may come across among those cli tools or simliar sou
 
 ## *Features*
 
-- [x] Basic profile information `ghstats-cli basicinfo <username>`
-- [x] List the popular repositories by star count `ghstats-cli popularrepos <username>`
-- [x] Get to know the star count that the user has for his source repositories `ghstats-cli stars <username>`
+- [x] Basic profile information `ghstats basicinfo <username>`
+- [x] List the popular repositories by star count `ghstats popularrepos <username>`
+- [x] Get to know the star count that the user has for his source repositories `ghstats stars <username>`
 
 ## License
 

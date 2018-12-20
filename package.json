@@ -1,12 +1,14 @@
 {
   "name": "ghstats-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automate the unusual stuffs on GitHub",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
-  "bin": "./index.js",
+  "bin": {
+    "ghstats": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jamesgeorge007/ghstats-cli"

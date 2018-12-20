@@ -22,12 +22,12 @@ program
   .action(versionInfo);
 
 program
-  .command('basic_info <username>')
+  .command('basicinfo <username>')
   .description('Shows all the basic information regarding a user\'s GitHub profile.')
   .action(basicInfo);
 
 program
-  .command('popular_repos <username>')
+  .command('popularrepos <username>')
   .description('Fetch the popular repostories by star count.')
   .action(popularRepos);
 

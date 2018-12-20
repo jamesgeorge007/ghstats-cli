@@ -1,6 +1,6 @@
 {
   "name": "ghstats-cli",
-  "version": "0.0.9",
+  "version": "1.0.1",
   "description": "Automate the unusual stuffs on GitHub",
   "main": "index.js",
   "directories": {

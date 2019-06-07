@@ -5,11 +5,9 @@
 
 <h1 align="center"> GHstats-CLI </h1>
 
-> A CLI utility to show a particular user's GitHub activity.
-
 ## Basic Info
 
-All those packages that you may come across among those cli tools or simliar sought of libraries will be performing just those data fetching part from the REST API which makes no sense. I made an attempt to fetch couple of unusual stuffs unseen in those pre-available tools as mentioned above such as counting up the stars the user has received for his repositories excluding the forks. It involves implementations in the programmatic way rather than normal data fetching stuff say, fetching the star count for source repositories require couple of array manipulations.
+Get to know the GitHub activity of a particular user without leaving the Terminal.
 
 ## *Installation*
 
@@ -19,11 +17,10 @@ All those packages that you may come across among those cli tools or simliar sou
 
 ## *Features*
 
-- [x] Basic profile information `ghstats basicinfo <username>`
-- [x] List the popular repositories by star count `ghstats popularrepos <username>`
-- [x] Get to know the star count that the user has for his source repositories `ghstats stars <username>`
+- [x] Basic profile stats:- `gh stats <username>`
+- [x] List the popular repositories by star count:- `gh repos <username>`
+- [x] Show the star count for source repositories:- `gh stars <username>`
 
 ## License
 
-Licensed under `GNU General Public License V3.0`	
-
+Licensed under `GNU General Public License V3.0`

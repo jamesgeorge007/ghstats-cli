@@ -1,33 +1,17 @@
 const chalk = require('chalk');
-const elegantSpinner = require('elegant-spinner');
-const logUpdate = require('log-update');
-const cliTable = require('cli-table'); 
+const cliTable = require('cli-table');
 const fetch = require('isomorphic-unfetch');
 
-const showBanner = require('../utils/banner');
+const showBanner = require('node-banner');
 const API_URL = 'https://api.github.com/users';
 
 const displayInfo = new cliTable();
 
-const basicInfo = (username) => {
-  showBanner();
+const basicInfo = async (username) => {
+  await showBanner('GHstats-CLI');
 
   // Taking in just the argument part
   const args = process.argv.slice(3);
-
-  let frame = elegantSpinner();
-  let timer = setInterval( () => {
-    logUpdate(frame());
-  }, 300);
-
-  setTimeout(() => {
-
-  	clearInterval(timer);
-
-  	if (args.length > 1){
-  		console.log(chalk.red('\n Only 1 argument is allowed'));
-  		process.exit(1);
-  	}
 
   	fetch(`${API_URL}/${username}`)
   	.then(response => response.json())
@@ -46,7 +30,6 @@ const basicInfo = (username) => {
   		}
   	})
   	.catch(err => console.log(err))
-  }, 1000)
 }
 
 module.exports = basicInfo;

@@ -1,31 +1,14 @@
 const chalk = require('chalk');
-const chalkAnimation = require('chalk-animation');
-const elegantSpinner = require('elegant-spinner');
-const logUpdate = require('log-update');
-const showBanner = require('../utils/banner');
+const showBanner = require('node-banner');
 const fetch = require('isomorphic-unfetch');
 
 const API_URL = 'https://api.github.com/users';
 
-const popularRepos = (username) => {
-  showBanner();
+const popularRepos = async (username) => {
+  await showBanner('GHstats CLI');
 
   // Taking in just the argument part
   const args = process.argv.slice(3);
-
-  let frame = elegantSpinner();
-  let timer = setInterval( () => {
-    logUpdate(frame());
-  }, 300);
-  
-  setTimeout(() => {
-
-  	clearInterval(timer);
-
-  	if (args.length > 1){
-  		console.log(chalk.red('\n Only 1 argument is allowed'));
-  		process.exit(1);
-  	}
 
 	fetch(`${API_URL}/${username}/repos?per_page=100`)
 	.then( response =>  response.json() )
@@ -52,7 +35,6 @@ const popularRepos = (username) => {
  		}
 	})
 	.catch(err => console.log(err));
-	}, 1000);
 }
 
 module.exports = popularRepos;

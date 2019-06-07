@@ -25,15 +25,12 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
-    "chalk-animation": "^1.6.0",
     "clear": "^0.1.0",
-    "cli-progress": "^2.0.0",
-    "cli-table": "^0.3.1",
+    "cli-table3": "^0.5.1",
     "commander": "^2.16.0",
-    "elegant-spinner": "^2.0.0",
     "figlet": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",
-    "log-update": "^3.1.0",
-    "progress": "^2.0.0"
+    "node-banner": "^1.1.0",
+    "ora": "^3.4.0"
   }
 }

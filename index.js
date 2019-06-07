@@ -2,24 +2,16 @@
 
 'use strict'
 
-const fetch = require('isomorphic-unfetch');
-const program = require('commander'); 
-const chalk = require('chalk');
-const chalkAnimation = require('chalk-animation');
-const figlet = require('figlet');
-const clear = require('clear');
-const elegantSpinner = require('elegant-spinner');
-const logUpdate = require('log-update');
+const program = require('commander');
 
-const  basicInfo = require('./lib/basic_info');
-const  starCount  = require('./lib/star_count');
-const  popularRepos  = require('./lib/popular_repos');
-const  versionInfo = require('./lib/version_info');
+const basicInfo = require('./src/basic_info');
+const starCount  = require('./src/star_count');
+const popularRepos  = require('./src/popular_repos');
+const pJSON = require('./package');
 
 program
-  .command('version')
-  .description('Shows basic information such as version-info and development environment details')
-  .action(versionInfo);
+  .version(pJSON.version)
+  .usage('<command> [options]');
 
 program
   .command('basicinfo <username>')

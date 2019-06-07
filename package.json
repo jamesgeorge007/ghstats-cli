@@ -1,6 +1,6 @@
 {
   "name": "ghstats-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Get GitHub activity of a user without leaving the Terminal",
   "files": [
     "src",

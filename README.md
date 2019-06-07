@@ -7,13 +7,11 @@
 
 ## Basic Info
 
-Get to know the GitHub activity of a particular user without leaving the Terminal.
+Get to know the GitHub activity of a user without leaving the Terminal.
 
 ## *Installation*
 
 `npm install -g ghstats-cli`
-
-![capture](https://github.com/jamesgeorge007/ghstats-cli/blob/master/assets/capture.JPG)
 
 ## *Features*
 

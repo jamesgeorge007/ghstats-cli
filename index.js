@@ -4,8 +4,6 @@
 
 const program = require('commander');
 
-require('dotenv').config();
-
 const displayStats = require('./src/info');
 const {version} = require('./package');
 

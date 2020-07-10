@@ -1,10 +1,13 @@
 const axios = require('axios');
+const Conf = require('conf');
+const enquirer = require('enquirer');
 const showBanner = require('node-banner');
 const ora = require('ora');
 const Table = require('cli-table3');
 
 const {description} = require('../package');
 
+const config = new Conf();
 const tableView = new Table();
 
 const query = `
@@ -45,8 +48,24 @@ const query = `
 const axiosConfig = {
 	url: 'https://api.github.com/graphql',
 	method: 'post',
+	headers: {},
 	data: {
 		query
+	}
+};
+
+const updateAxiosConfig = (username) => {
+	axiosConfig.data.variables = {
+		login: username
+	};
+};
+
+const validateUserToken = async () => {
+	try {
+		await axios(axiosConfig);
+		return true;
+	} catch {
+		return false;
 	}
 };
 
@@ -59,29 +78,65 @@ const displayStats = async (username) => {
 	await showBanner('GHStats', description);
 	// Holds the items to be displayed in tabular format
 	const data = [];
+	let userToken = config.get('githubUserToken');
+
+	// Validate GitHub user token
+	updateAxiosConfig('jamesgeorge007');
+
+	if (!userToken) {
+		try {
+			({githubUserToken: userToken} = await enquirer.prompt({
+				name: 'githubUserToken',
+				type: 'password',
+				message: 'Please provide your GitHub user token',
+				validate: (value) => Boolean(value)
+			}));
+			config.set('githubUserToken', userToken);
+		} catch (error) {
+			console.log('Action Interrupted!');
+			throw error;
+		}
+	}
+
+	axiosConfig.headers.Authorization = `bearer ${userToken}`;
+
+	if (!(await validateUserToken())) {
+		console.log('Invalid token');
+		await validateUserToken();
+	}
+
+	updateAxiosConfig(username);
 
 	const spinner = ora('Fetching details');
 	spinner.start();
 
-	axiosConfig.data.variables = {
-		login: username
-	};
+	let result = {};
+	try {
+		result = await axios(axiosConfig);
+	} catch (error) {
+		spinner.fail('Something went wrong');
+		throw error;
+	}
 
-	const result = await axios(axiosConfig);
 	spinner.stop();
 
-	const userInfo = result.data.data.user;
+	const profileStats = result.data.data.user;
 
-	Object.keys(userInfo)
+	if (!profileStats) {
+		spinner.fail('Invalid username');
+		return;
+	}
+
+	Object.keys(profileStats)
 		.filter((key) => key !== 'pinnedItems')
 		.forEach((key) =>
 			data.push({
 				[toSentenceCase(key)]: Object.prototype.hasOwnProperty.call(
-					userInfo[key],
+					profileStats[key],
 					'totalCount'
 				)
-					? userInfo[key].totalCount
-					: userInfo[key]
+					? profileStats[key].totalCount
+					: profileStats[key]
 			})
 		);
 	tableView.push(...data);

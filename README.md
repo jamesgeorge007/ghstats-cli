@@ -7,7 +7,7 @@
 
 ## Basic Info
 
-Get to know the GitHub activity of a user without leaving the Terminal.
+GitHub profile stats right from the Terminal
 
 ## *Installation*
 

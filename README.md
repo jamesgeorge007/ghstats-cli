@@ -11,13 +11,7 @@ Get to know the GitHub activity of a user without leaving the Terminal.
 
 ## *Installation*
 
-`npm install -g ghstats-cli`
-
-## *Features*
-
-- [x] Basic profile stats:- `gh stats <username>`
-- [x] List the popular repositories by star count:- `gh repos <username>`
-- [x] Show the star count for source repositories:- `gh stars <username>`
+`npx ghstats-cli <username>`
 
 ## License
 

@@ -89,7 +89,15 @@ const displayStats = async (username) => {
 				name: 'githubUserToken',
 				type: 'password',
 				message: 'Please provide your GitHub user token',
-				validate: (value) => Boolean(value)
+				validate: async (token) => {
+					if (!token) return;
+					/* Check if the user token is valid
+					 * and if not display the prompt again
+					 */
+					axiosConfig.headers.Authorization = `bearer ${token}`;
+					const isValidToken = await validateUserToken();
+					return isValidToken;
+				}
 			}));
 			config.set('githubUserToken', userToken);
 		} catch (error) {
@@ -98,14 +106,9 @@ const displayStats = async (username) => {
 		}
 	}
 
-	axiosConfig.headers.Authorization = `bearer ${userToken}`;
-
-	if (!(await validateUserToken())) {
-		console.log('Invalid token');
-		await validateUserToken();
-	}
-
 	updateAxiosConfig(username);
+
+	axiosConfig.headers.Authorization = `bearer ${userToken}`;
 
 	const spinner = ora('Fetching details');
 	spinner.start();

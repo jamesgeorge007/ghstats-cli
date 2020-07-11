@@ -4,7 +4,7 @@
 
 const program = require('commander');
 
-const displayStats = require('./src/info');
+const displayStats = require('./src/stats');
 const {version} = require('./package');
 
 program

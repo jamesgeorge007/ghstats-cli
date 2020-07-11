@@ -95,8 +95,11 @@ const displayStats = async (username) => {
 					 * and if not display the prompt again
 					 */
 					axiosConfig.headers.Authorization = `bearer ${token}`;
-					const isValidToken = await validateUserToken();
-					return isValidToken;
+					if (!(await validateUserToken())) {
+						return 'Invalid token';
+					}
+
+					return true;
 				}
 			}));
 			config.set('githubUserToken', userToken);

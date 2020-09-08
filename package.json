@@ -33,7 +33,7 @@
     "enquirer": "^2.3.6",
     "isomorphic-unfetch": "^3.0.0",
     "node-banner": "^1.4.0",
-    "ora": "^4.0.4"
+    "ora": "^5.1.0"
   },
   "devDependencies": {
     "xo": "^0.33.1"

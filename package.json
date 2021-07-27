@@ -28,7 +28,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cli-table3": "^0.6.0",
-    "commander": "^5.1.0",
+    "commander": "^8.1.0",
     "conf": "^7.0.1",
     "enquirer": "^2.3.6",
     "isomorphic-unfetch": "^3.0.0",
